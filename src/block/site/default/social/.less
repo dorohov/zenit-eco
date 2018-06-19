@@ -1,90 +1,144 @@
-.social-block{
+//===== social =====//
+@soc_size: 					32px;
+@soc_border_radius: 		50%;
+@soc_border: 				@blue-light;
+@soc_bg: 					#764E26;
+@soc_bg_hover: 				@b-color-a;
+@soc_color: 				@b-color-a;
+@soc_color_hover: 			@white;
+@soc_color_contacts:		@b-color;
+@soc_gutter:				5px; 
+.social__{
+	&block{}
+	&row{ 
+		align-items: center;		
+		margin-left: -(@soc_gutter);
+		margin-right: -(@soc_gutter);
+	}
+	&cols{
+		padding-left: @soc_gutter;
+		padding-right: @soc_gutter;
+	}
+	&heading{	
+	}
+	&item{
+		display: block;
+		width: @soc_size;
+		height: @soc_size;
+		//border: 2px solid @soc_border;
+		//border-radius: @soc_border_radius;
+		//padding: 6px;
+		@media @media-point-screen-lg {
+			width: @soc_size - 14;
+			height: @soc_size - 14;	
+			//padding: 4px;		
+		}
+		&, &:focus{color: @soc_color;} 
+		svg{display: block;}
+		&.is--footer{	
+			&, &:focus{color: @green-light;} 		
+			@media @media-point-screen {
+				width: @soc_size - 8;
+				height: @soc_size - 8;
+				//padding: 5px;
+			}
+			@media @media-point-md2 {
+				//width: @soc_size - 6;
+				//height: @soc_size - 6;
+				//padding: 4px;
 
-}
-.social__row{
-    justify-content: center;
-    margin-top: -5px;
-    @media @media-size-sm{
-    	margin-left: -5px;
-    	margin-right: -5px;
-	    > .cols{
-	    	padding-left: 5px;
-	    	padding-right: 5px;
-	    }
-    }
-    @media @media-screen{
-    	margin-left: -10px;
-    	margin-right: -10px;
-	    > .cols{
-	    	padding-left: 10px;
-	    	padding-right: 10px;
-	    }
-    }
-    @media @media-size-mdl{
-	    > .cols{
-	    	padding-left: 5px;
-	    	padding-right: 5px;
-	    }
-    }
-	> .cols{
-		padding-top: 5px;
-	}
-}
-.social__item{
-	display: block;
-	padding: 4px;
-	border-radius: 50%;
-	border: 4px solid;
-	width: 40px;
-	height: 40px;
-	transition: @transition-site;
-	@media @media-size-md{
-		padding: 4px;
-		border: 3px solid;
-		width: 32px;
-		height: 32px;
-	}
-	&[href^="viber://"]{
-		border:0;
-		border-radius: 0;
-		padding: 0;
-		background:none;
-	}
-	.index-page &{
-		border-color: @b-social-bc-in;
-	}
-	.second-page &{
-		border-color: @b-social-bc;
-	}
-	&._inst{padding: 6px;}
-	.icon-soc{
-		width: 100%;
-		height: 100%;
-		fill: @b-social-bc;
-		transition: @transition-site;
-		.index-page &{
-			fill: @b-social-bc-in;
-		}
-		.second-page &{
-			fill: @b-social-bc;
-		}
-	}
-	&:hover{
-		.index-page &{
-			background: @b-social-bc-in;
-			&[href^="viber://"]{
-				background: none;
-				.icon-soc{fill: #665cac;}
 			}
-			.icon-soc{fill: @white;}
 		}
-		.second-page &{
-			background: @b-social-bc;
-			&[href^="viber://"]{
-				background: none;
-				.icon-soc{fill: #665cac;}
+		&.is--vk{
+			&:hover{
+				color: @color-vk;				
 			}
-			.icon-soc{fill: @black;}
+		}
+		&.is--fb{
+			&:hover{
+				color: @color-fb;				
+			}
+		}
+		&.is--inst{
+			&:hover{
+				color: @color-inst;				
+			}	
+		}
+		&.is--ok{
+			&:hover{
+				color: @color-ok;						
+			}	
+		}
+		&.is--tw{
+			&:hover{
+				color: @color-tw;				
+			}
 		}
 	}
+}
+.social-contacts__{
+	&block{}
+	&row{		
+		align-items: center;
+		margin-top: -15px;
+		margin-left: -(@soc_gutter) - 15px;
+		margin-right: -(@soc_gutter) - 15px;
+		@media @media-point-notsmart {
+			justify-content: space-between;
+		}
+		&.is--footer{
+			@media @media-point-device {
+				flex-wrap: wrap;
+			}
+		}
+	}
+	&cols{
+		padding-top: 15px;
+		padding-left: @soc_gutter + 15px;
+		padding-right: @soc_gutter + 15px;
+		&.is--footer{
+			@media @media-point-sm {
+				.makeCols(4, 12);
+			}
+			@media @media-point-md1 {
+				.makeCols(3.5, 12);
+			}
+			&.is--address{
+				@media @media-point-md1 {
+					.makeCols(5, 12);
+				}
+				@media @media-point-md2 {
+					.makeCols(4, 12);
+				}
+			}
+		}
+	}
+	&item{
+		position: relative;
+		padding-left: 45px;
+		@media @media-point-smart {
+			padding-left: 0;
+		}
+	}
+	&item-icon{
+		@media @media-point-smart {
+			display: none;
+		}
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 30px;
+		height: 30px;
+		border-width: 2px;
+		border-style: solid;
+		border-radius: 50%;
+		padding: 5px;
+		&.is--footer{
+			border-color: @b-color;
+			color: @b-color;
+		}
+		svg{display: block;}
+	}
+	&item-name{}
 }

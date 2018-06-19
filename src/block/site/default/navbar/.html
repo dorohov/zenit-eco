@@ -1,49 +1,146 @@
-<nav class="navbar {{class}}">
-	<div class="container navbar-container">		
-		<div class="row navbar-row">		
-			<div class="cols navbar-header-cols">
-				<div class="navbar-header">
-					<div class="row navbar-header__row ">
-						<div class="cols navbar-brand__cols">
-							<a class="navbar-brand" href="http://zenit-orel.ru/" target="_blank">
-								<img src="/img/default/logotip.png" alt="" > 
-							</a>
-						</div>
-					</div>
-				</div>
-			</div> 
-			<div class="cols navbar-collapse-cols">
-				<div class="collapse navbar-collapse" id="bs-navbar-collapse">
-					<div class="navbar-collapse-inner">	
-						<ul class="nav navbar-nav">		 	
-							<li><a href="/">Главная</a></li>
-							<li><a href="/about.html">Описание</a></li>
-							<li><a href="/layouts.html"><span>Планировки квартир</span></a></li>
-							<li><a href="/building.html" ><span>Ход строительства</span></a></li>
-							<li><a href="/docs.html" ><span>Документы</span></a></li>
-							<li><a href="/contacts.html"><span>Контакты</span></a></li> 
-						</ul>
-					</div> 
-					<div class="navbar-collapse-hamburger">	
-						<div class="navbar-hamburger">
-							<button class="hamburger hamburger--vortex" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" data-toggle-nav=".navbar-site" data-body="html" data-collapse-nav=".content-wrap">
-								<span class="hamburger-box">
-									<span class="hamburger-inner"></span>
-								</span>
+<nav class="{{class}} navbar {{navbar_mod}}">
+	<div class="{{navbar_prefix}}inner">
+		<div class="container {{navbar_prefix}}container">
+			<div class="{{navbar_prefix}}header">
+				<div class="row {{navbar_prefix}}row-header ">
+					<div class="cols {{navbar_prefix}}cols-header  is--hamburger">
+						<div class="{{navbar_prefix}}hamburger">
+							<button class="{{navbar_prefix}}hamburger-btn hamburger__item" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" data-toggle-nav=".navbar-site" data-body="html" data-collapse-nav=".navbar__collapse">
+								<span class="hamburger__line  is--left"></span>
+								<span class="hamburger__line  is--center"></span>
+								<span class="hamburger__line  is--right"></span>
 							</button>
 						</div>
 					</div>
+					<div class="cols {{navbar_prefix}}cols-header  is--brand">
+						<a class="{{navbar_prefix}}brand" href="{{page.index}}"><img src="{{url-path-img}}/default/logotip.png" alt=""></a>
+					</div>
+					<div class="cols {{navbar_prefix}}cols-header  is--tel">
+						<a href="#" class="{{navbar_prefix}}link  is--icon">
+							<div class="{{navbar_prefix}}link-icon">
+								[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="icon-special" ]]
+							</div>
+						</a>
+					</div>
 				</div>
+			</div>
 				
-			</div>	
-			<div class="cols navbar-contacts-cols">
-				<div  class="navbar-contacts__item">
-					<a class="__icon" href="#callbackwidget">					
-						[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="phone" class="icon" ]]
-					</a> 
-					<a href="tel:{{contacts.phone_tel}}">
-						{{contacts.phone}}
-					</a>
+			<div class="{{navbar_prefix}}collapse" >
+				<div class="{{navbar_prefix}}collapse-inner">	
+					<div class="row {{navbar_prefix}}collapse-row">
+						<div class="cols {{navbar_prefix}}collapse-cols cols  is--left">
+							<a class="{{navbar_prefix}}brand" href="{{page.index}}"><img src="{{url-path-img}}/default/logotip.png" alt=""></a> 
+						</div>
+						<div class="cols {{navbar_prefix}}collapse-cols cols  is--right">
+							<div class="{{navbar_prefix}}collapse-panel-group">
+								<div class="{{navbar_prefix}}collapse-panel  is--top">
+									<div class="row {{navbar_prefix}}collapse-row  is--inner-top">
+										<div class="cols {{navbar_prefix}}collapse-cols cols  is--inner-top-left">	
+											<a href="#" class="{{navbar_prefix}}link">Сведения об образовательной организации</a>								  
+										</div>
+										<div class="cols {{navbar_prefix}}collapse-cols cols  is--inner-top-left-center">
+											<a href="#" class="{{navbar_prefix}}link">Доступная среда (Инклюзивное образование)</a>
+										</div>
+										<div class="cols {{navbar_prefix}}collapse-cols cols  is--inner-top-right-center">
+											[[azbntple 
+												tpl="/src/block/site/default/social/panel.html" 
+												block_prefix="social__" 
+												block_mod="is--navbar" 
+											]]	
+										</div>
+										<div class="cols {{navbar_prefix}}collapse-cols cols  is--inner-top-right">
+											<a href="#" class="{{navbar_prefix}}link  is--icon">
+												<div class="{{navbar_prefix}}link-icon">
+													[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="icon-special" ]]
+												</div>
+												Версия для cлабовидящих
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="{{navbar_prefix}}collapse-panel  is--bottom">
+									<div class="row {{navbar_prefix}}collapse-row  is--inner">
+										<div class="cols {{navbar_prefix}}collapse-cols cols  is--inner-bottom-left">
+											<ul class="{{navbar_prefix}}nav">
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Главная" 
+													navbar_link="{{page.index}}"
+													navbar_mod="is--index" 
+												]]
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item-drop-about.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="О ВУЗе" 
+													navbar_link="##"
+													navbar_link="{{page.about}}"
+													navbar_mod="  " 
+												]] 
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item-drop-faculty.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Факультеты" 
+													navbar_link="##"
+													navbar_link="{{page.faculty}}"
+													navbar_mod="  " 
+												]]
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item-drop-entrant.html" 
+													navbar_prefix="navbar__" 
+													navbar_link="##"
+													navbar_name="Абитуриентам" 
+													navbar_link="{{page.entrant}}"
+													navbar_mod="  " 
+												]]	
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item-drop-student.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Студентам"
+													navbar_link="##"
+													navbar_link="{{page.student}}"
+													navbar_mod="  " 
+												]]	
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item-drop-science.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Наука"
+													navbar_link="##"
+													navbar_link="{{page.science}}"
+													navbar_mod="  " 
+												]]
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Научная библиотека"
+													navbar_link="##"
+													navbar_link="{{page.science_library}}"
+													navbar_mod="  " 
+												]]	
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Контакты"
+													navbar_link="{{page.contacts}}"
+													navbar_mod="  " 
+												]]	
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item-drop-search.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="icon-search"
+													navbar_link="##"
+													navbar_mod="  " 
+												]]	
+											</ul>
+										</div>
+										<div class="cols {{navbar_prefix}}collapse-cols cols  is--inner-bottom-right">			
+											<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}tel">{{contacts.phone}}</a>																	
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
