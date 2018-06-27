@@ -2,7 +2,7 @@
 @url-site:'';
 @url-path:'/wp-content/themes/azbnbasetheme2'; 
 @url-path:'/wp-content/themes/azbn7theme'; 
-@url-path:'/orelsau/';
+@url-path:'/zenit-eco/';
 //@url-path:'';
 @url-path-css:'@{url-path}/css';
 @url-path-fonts:'@{url-path}/fonts';
@@ -20,13 +20,25 @@
 @black-61: 			lighten(@black, 38%); 		//#616161
 
 //base
+@green-dark:		#6d9600;
+@green:				#99c302;
+@green-white:		#e1eec0;
+@blue:				#136cb3;
+@blue-light:		#3aa9e2;
+@blue-white:		#cceeff;
+@blue-dark:			#38a9e2;
+@azur:				#00b1a0;
+@azur-light:		#00d4ab;
+@orange:			#dfad00;
+@white-e3:			#e3f7f6;
+@white-e7:			#e7e7e7;
+@white-f3:			#f3f3f3;
+@black-71:			#717171;
+@black-24:			#242424;
+@black-56:			#565656;
+//old
 @yellow:			#F2C94C;
-@green:				#409999;
-@green-light:		#AAC72D;
-@green-dark:		#009948;
-@blue:				#0087D1;
-@blue-dark:			#002450;
-@blue-light:		#0CA6FA;
+@green-light:		#009948;
 @red:				#C31846;
 
 @color-vk: 			#4d7198;
@@ -50,6 +62,13 @@
 @color-txt:			#6fbbcc;
 
 //===== fonts =====//
+@roboto-cond:					robotocondensed-400;
+@roboto-cond-400i:				robotocondensed-400i;
+@roboto-cond-700:				robotocondensed-700;
+
+@din: 							pfdintextcomppro-500;
+@din-900: 						pfdintextcomppro-900;
+//old
 @roboto:						roboto-400;
 @roboto-400i:					roboto-400i;
 @roboto-500:					roboto-500;
@@ -58,21 +77,22 @@
 @roboto-slab:					roboto-slab-700;
 
 //===== base =====//
-@b-color:						@black-27; 
-@b-color-a:						@green; 
-@b-color-a-hover:				@green-dark; 
-@b-color-h:						@blue-dark; 
-//@b-color-invers:				@white; 
-//@b-color-invers-h:				@orange;
-@b-html-bg:						@white-f2; 
-@b-body-bg:						@white-f2; 
+@b-color:						@black-71; 
+@b-color-a:						@blue; 
+@b-color-a-hover:				@blue-light; 
+@b-color-h:						@black-24; 
+@b-color-btn:					@green; 
+@b-color-btn-hover:				@azur; 
+
+@b-html-bg:						@white; 
+@b-body-bg:						@white; 
 @b-line:						@white; 
-@b-ff:							@roboto;
-@b-ff-2:						@roboto-slab;
-@b-ff-3:						@roboto;
+@b-ff:							@roboto-cond;
+@b-ff-2:						@din;
+@b-ff-3:						@roboto-cond;
 @b-italic:						@b-ff;
 @b-bold:						@b-ff; 		
-@b-fs: 							16px;
+@b-fs: 							18px;
 @b-lh: 							24px;
 @trs-site: 						all 0.35s ease; 
 //@trs-site: 						all 0.35s cubic-bezier(0.4, 0, 1, 1); 
@@ -86,17 +106,17 @@
 @wp_bar_screen: 				32px;
 //===== nav =====//
 @navbar-bg-screen:				@white; 
-@navbar-bg-screen-hover:		@white; 
-@navbar-bg-device:				@white;
+@navbar-bg-screen-hover:		@blue-white; 
+@navbar-bg-device:				@blue-white;
 @navbar-ff:						@b-ff;
 @navbar-fs:						@b-fs; 
 @navbar-lh:						@b-lh;  
 @navbar-color-link:				@blue;
-@navbar-color:					@b-color;
-@navbar-color-hover:			@b-color;
+@navbar-color:					@black-24;
+@navbar-color-hover:			@blue;
 @navbar-color-tel:				@b-color-a;
-@navbar-active-bg:				@b-color-a;
-@navbar-active-color:			@white;
+@navbar-active-bg:				@blue-light;
+@navbar-active-color:			@blue;
 @navbar-btn:					@blue;
 @navbar-btn-hover:				@blue;
 
@@ -112,11 +132,11 @@
 @navbar_cat_bg:					@white;
 
 
-@navbar-device:					70px;   
+@navbar-device:					76px;   
 @navbar-xs:						@navbar-device;
 @navbar-sm:						@navbar-device;
 @navbar-md:						@navbar-device;
-@navbar-screen:					133px;
+@navbar-screen:					101px;
 @navbar-lg:						@navbar-screen;
 @navbar-xl:						@navbar-screen;
 @navbar-xxl:					@navbar-screen; 
@@ -129,9 +149,10 @@
 @navbar-bottom:					54px;
 @navbar-bottom-tabs:			64px;
 //===== footer =====//
-@footer-color:					@white; 
-@footer-color-hover:			@white; 
-@footer-bg:						@b-color;
+@footer-color:					@black-71;
+@footer-color-a:				@blue;
+@footer-color-hover:			@black-71; 
+@footer-bg:						@white-e7;
 @footer-ff:						@b-ff; 
 @footer-fs:						@b-fs; 
 @footer-lh:						@b-lh; 
@@ -140,9 +161,9 @@
 @footer-sm:						84px;
 @footer-device-sm-p:			125px;
 @footer-device-sm-l:			113px;
-@footer-screen:					264px;
-@footer-screen-md:				@footer-screen;
-@footer-screen-lg:				@footer-screen;
+@footer-screen:					245px;
+@footer-screen-md:				236px;
+@footer-screen-lg:				220px;
 @footer-screen-xxl:				@footer-screen;
 //===== page-header =====//
 @page_header_color: 			@b-color-h;
@@ -156,10 +177,10 @@
 @pagin-color-h: 				@b-color-a;
 @pagin-bg: 						@b-color-a;
 //===== breadcrumb =====//
-@bread_fs: 						@b-fs - 2;
-@bread_lh: 						@b-lh - 4;
-@bread_color: 					@black-61;
-@bread_color_active: 			@b-color-a-hover;
+@bread_fs: 						@b-fs;
+@bread_lh: 						@b-lh;
+@bread_color: 					@black-71;
+@bread_color_active: 			@b-color-btn;
 @bread_style_line:				solid;
 
 //===== animation =====//
@@ -171,62 +192,62 @@
 @btn_lh: 						@b-lh + 2;
 @btn_border_radius:				0;
 //== base ==
-@btn_color:						@b-color-h;
-@btn_border_color:				@green-light;
-@btn_bg_color:					@green-light;
+@btn_color:						@white;
+@btn_border_color:				@b-color-btn;
+@btn_bg_color:					@b-color-btn;
 //= hover =
 @btn_hover_color:				@white;
-@btn_hover_bg_color:			@b-color-a;	
-@btn_hover_border_color:		@b-color-a;
+@btn_hover_bg_color:			@b-color-btn-hover;
+@btn_hover_border_color:		@b-color-btn-hover;
 
 //== white ==
-@btn_w_color:					@green-dark;
+@btn_w_color:					@b-color-btn-hover;
 @btn_w_border_color:			@white;
 @btn_w_bg_color:				@white;
 //= hover =
 @btn_w_hover_color:				@white;
-@btn_w_hover_bg_color:			@green-dark;	
-@btn_w_hover_border_color:		@green-dark;
+@btn_w_hover_bg_color:			@b-color-btn-hover;
+@btn_w_hover_border_color:		@b-color-btn-hover;
 
 //== invers ==
-@btn_i_color:					@b-color-h;
-@btn_i_border_color:			@yellow;
-@btn_i_bg_color:				@yellow;
+@btn_i_color:					@white;
+@btn_i_border_color:			@b-color-btn-hover;
+@btn_i_bg_color:				@b-color-btn-hover;
 //= hover =
 @btn_i_hover_color:				@white;
-@btn_i_hover_bg_color:			@b-color-a;	
-@btn_i_hover_border_color:		@b-color-a;
+@btn_i_hover_bg_color:			@b-color-btn;
+@btn_i_hover_border_color:		@b-color-btn;
 
 //== link ==
-@btn_l_color:					@b-color-a-hover;
-@btn_l_border_color:			@b-color-a-hover;
-@btn_l_bg_color:				@b-color-a-hover;
+@btn_l_color:					@b-color-a;
+@btn_l_border_color:			@b-color-a;
+@btn_l_bg_color:				@b-color-a;
 //= hover =
-@btn_l_hover_color:				@b-color-a;
-@btn_l_hover_border_color:		@b-color-a;
-@btn_l_hover_bg_color:			@b-color-a;
+@btn_l_hover_color:				@b-color-btn-hover;
+@btn_l_hover_border_color:		@b-color-btn-hover;
+@btn_l_hover_bg_color:			@b-color-btn-hover;
 //===== end's btn =====//
 
 //===== form input =====//
-@form_control_bg_color:			@white;
-@form_control_height:			44px;
+@form_control_bg_color:			fadeout(@blue-white, 30%);
+@form_control_height:			50px;
 @form_control_height_textarea:	105px;
 @form_control_border_radius:	0px;
 @form_control_border_color:		@white-bd;
 @form_control_border_width:		1px;
 //= focus =
-@form_control_focus_bg_color:	@white;
+@form_control_focus_bg_color:	@blue-white;
 @form_control_focus_border_color:	@blue;
 //== text ==
-@form_control_t_color:			@green-dark;
+@form_control_t_color:			@black;
 @form_control_t_fs:				@b-fs;
 @form_control_t_lh:				@b-lh;
 //= focus =
 @form_control_focus_t_color:	@b-color;
 //== placeholder ==
-@form_control_plh_color:		@white-bd;
-@form_control_plh_fs:			@b-fs - 2;
-@form_control_plh_lh:			@b-lh - 2;
+@form_control_plh_color:		@black-71;
+@form_control_plh_fs:			@b-fs;
+@form_control_plh_lh:			@b-lh;
 //= focus =
 @form_control_focus_plh_color:	@b-color;
 
@@ -244,7 +265,7 @@
 @form_control_focus_sw_l_bg_color:		@green-dark;
 
 //== white ==
-@form_control_w_bg_color:			@white;
+@form_control_w_bg_color:			fadeout(@white, 20%);
 @form_control_w_border_color:		@white;
 //= focus =
 @form_control_w_focus_bg_color:		@white;
@@ -297,12 +318,18 @@
 @media-point-smart: ~"(max-width: 767px)";
 @media-point-notsmart: ~"(min-width: 768px)";
 
-.heading1(){
-	.calcFontSize(30, 60, 320, 1680);
-	.calcLineHeight(36, 66, 320, 1680);
-	font-weight: 700;
+.heading-lg(){
 	font-family: @page_header_ff;
-	color: @page_header_color;
+	color: @blue;	
+	.calcFontSize(30, 66, 320, 1680);
+	.calcLineHeight(28, 64, 320, 1680);
+}
+.heading1(){
+	.calcFontSize(36, 56, 320, 1680);
+	.calcLineHeight(42, 62, 320, 1680);
+	font-weight: 400;
+	font-family: @page_header_ff;
+	color: @blue;
 }
 .heading2(){
 	.calcFontSize(28, 46, 320, 1680);
@@ -313,26 +340,16 @@
 	.calcLineHeight(28, 38, 320, 1680);
 }
 .heading4(){
-	//.calcFontSize(20, 23, 320, 1680);
-	//.calcLineHeight(23, 27, 320, 1680);	
-	font-size: @b-fs + 4;
-	line-height: @b-lh + 0;
-	@media @media-point-notsmart {	
-		font-size: @b-fs + 8;
-		line-height: @b-lh + 4;
-	}
+	.calcFontSize(24, 29, 320, 1680);
+	.calcLineHeight(27, 32, 320, 1680);	
 }
 .heading5(){
-	//.calcFontSize(16, 17, 320, 1680);
-	//.calcLineHeight(19, 20, 320, 1680);		
-	font-size: @b-fs + 2;
-	line-height: @b-lh - 2;	
+	.calcFontSize(18, 23, 320, 1680);
+	.calcLineHeight(21, 27, 320, 1680);	
 }
 .heading6(){
-	//.calcFontSize(14, 15, 320, 1680);
-	//.calcLineHeight(16, 18, 320, 1680);	
-	font-size: @b-fs;
-	line-height: @b-lh;		
+	.calcFontSize(16, 18, 320, 1680);
+	.calcLineHeight(22, 24, 320, 1680);	
 }
 
 .calcFontSize(@f-min, @f-max, @v-min, @v-max){

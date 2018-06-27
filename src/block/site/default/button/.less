@@ -1,13 +1,15 @@
 .btn-base(){
 	font-weight: 700;
-	padding: 10px 25px;
-	font-size: @btn_fs;
-	line-height: @btn_lh;
+	padding: 15px 25px;
+	//font-size: @btn_fs;
+	//line-height: @btn_lh;
+	.heading5();
 	border-radius: @btn_border_radius;
 	@media @media-point-screen {
-		padding: 17px 4.4vw;
+		padding: 20px 3.9vw;
 	}
 }
+/*
 .btn-lg(){
 	@media @media-point-screen {
 		padding: 17px 3.2vw;
@@ -18,6 +20,7 @@
 		padding: 9px 3.2vw;
 	}
 }
+*/
 .btn__{
 	&clearfix{
 		.btn-clearfix();
@@ -60,18 +63,22 @@
 			}
 		}	
 		&.is--block{
-			padding: 10px 25px;
 			@media @media-point-screen {
 				width: 100%;
-				padding: 17px 25px;
 			}
 		}	
-		&.is--lg{
+		&.is--form{
+			padding: 12px 20px;
+			@media @media-point-screen {
+				padding: 12px 2vw;
+			}
+		}
+		/*&.is--lg{
 			.btn-lg();
 		}	
 		&.is--sm{
 			.btn-sm();
-		}
+		}*/
 	}
 	&icon{
 		.btn-clearfix();
@@ -95,21 +102,78 @@
 	&indicators-item{
 		.mix-indicators-item();
 	}
+	&del{
+		.btn-clearfix();
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 36px;
+		height: 36px;
+		background-color: @orange;
+		
+		padding: 6px;
+		svg{display: block;}
+		&, &:focus{
+			color: @black;
+		}
+		&:hover{
+			color: @white;
+			background-color: @blue;
+		}		
+	}
+	&edit{
+		.btn-clearfix();
+		position: absolute;
+		top: 40px;
+		right: 0;
+		width: 36px;
+		height: 36px;
+		background-color: @green;
+		
+		padding: 6px;
+		svg{display: block;}
+		&, &:focus{
+			color: @black;
+		}
+		&:hover{
+			color: @white;
+			background-color: @blue;
+		}		
+	}
 }
 .btn-link__{
 	&item{
 		.btn-clearfix();
+		font-weight: 700;
 		display: inline-block;
 		position: relative;
 		transition: @trs-btn; 	
 		color: @btn_l_color;
-		&.is--more{
-			padding: 5px 0;
+		font-size: @btn_fs;
+		line-height: @btn_lh;
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: @btn_l_color;
+			transition: @trs-site;
+		}
+		&.is--footer{
+			@media @media-point-device {
+				font-size: @b-fs - 2;
+			}
 		}
 		.card-item__card:hover &,
 		.card-item__card.is--active &,
 		&:hover{			
 			color: @btn_l_hover_color;
+			&::after{
+				background-color: fadeout(@btn_l_hover_color, 100%);
+
+			}
 			//background-color: @btn_l_hover_bg_color;
 			//border-color: @btn_l_hover_border_color;		
 		}
@@ -127,18 +191,6 @@
 		//transform: translateY(-50%);
 		width: 34px;
 		height: 34px;
-		&.is--more{
-			width: 100%;
-			height: 8px;
-			bottom: 0;
-			left: 0;
-			transform-origin: center left;
-			.card-item__card:hover &,
-			.card-item__card.is--active &,
-			.btn-link__item:hover &{
-				transform: scale(1.2, 1);
-			}
-		}		
 	}
 }
 .btn-icon__{
@@ -147,25 +199,22 @@
 		display: inline-block;
 		position: relative;
 		transition: @trs-btn; 	
-		color: @b-color;
-		padding-left: 45px;
+		color: @b-color-btn-hover;
+		padding-left: 65px;
 		padding-top: 10px;
 		padding-bottom: 10px;
-		font-weight: 400;
+		font-weight: 700;
+		&.is--lg{
+			color: @black-24;
+			.heading5();
+			padding-left: 60px;
+		}
 		.card-item__card:hover &,
 		.card-item__card.is--active &,
 		&:hover{			
-			color: @b-color-a-hover;
-		}
-		&.is--download{
-			color: @blue; 
-			padding-left: 75px;
-			padding-top: 15px;
-			padding-bottom: 15px;
-			font-size: @btn_fs;
-			line-height: @btn_lh;
-			&:hover{			
-				color: @b-color-a-hover;
+			color: @btn_l_color;
+			&.is--lg{
+				color: @b-color-btn;
 			}
 		}
 	}
@@ -175,13 +224,38 @@
 		left: 0;
 		top: 50%;
 		transform: translateY(-50%);
-		width: 26px;
-		height: 34px;
-		color: @b-color-a-hover;
-		&.is--download{
-			color: @blue; 
-			width: 54px;
+		width: 46px;
+		height: 46px;
+		color: @b-color-btn-hover;
+		&.is--lg{
+			width: 46px;
 			height: 54px;
-		}		
+			color: @b-color-btn;
+		}
+	}
+	&name{
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: @btn_l_color;
+			transition: @trs-site;
+		}
+		&.is--lg{
+			&::after{
+				background-color: @b-color-btn;
+			}
+		}
+		.card-item__card:hover &,
+		.card-item__card.is--active &,
+		&:hover{	
+			&::after{		
+				background-color: fadeout(@btn_l_color, 100%);
+			}
+		}
 	}
 }

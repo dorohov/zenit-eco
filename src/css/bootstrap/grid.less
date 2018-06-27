@@ -11,7 +11,7 @@
 	.container-fixed();
 	width: 100%;
 	@media @media-point-screen{width: 95vw;}
-	@media @media-point-xxl{width: 85vw; max-width: 1570px;}
+	@media @media-point-xxl{width: 87vw; max-width: 1655px;}
 }
 // Fluid container
 //
@@ -44,6 +44,22 @@
 		margin-top: -30px;
 		> .cols{
 			padding-top: 30px;
+		}
+	}
+	&.is--gutter45{
+		@media @media-point-screen {			
+			margin-top: -45px;
+			> .cols{
+				padding-top: 45px;
+			}
+		}
+	}
+	&.is--gutter5vw{
+		@media @media-point-screen {			
+			margin-top: -5vw;
+			> .cols{
+				padding-top: 5vw;
+			}
 		}
 	}
 	&.is--gutter15{

@@ -3,7 +3,7 @@
 	<input type="hidden" name="f[Форма: {{form_heading}}]">
 	<div class="{{form_prefix}}inner  {{form_mod}}"  >
 		<div class="row {{form_prefix}}row  is--wrap">
-			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--name">
+			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--control">
 				[[azbntple 
 					tpl="/src/block/site/default/form/elem-input-custom.html"
 					form_id="{{form_id}}"
@@ -17,40 +17,24 @@
 					block_required="required"
 					block_required_custom="onlyLetterSp"
 					block_label="Имя"
-					block_placeholder="Ваше имя"
+					block_placeholder="Имя"
 				]]
 			</div>
-			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--email">
+			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--control">
 				[[azbntple 
 					tpl="/src/block/site/default/form/elem-input-custom.html"
 					form_id="{{form_id}}"
-					block_id="email"
+					block_id="tel"
 					block_prefix="{{form_prefix}}"
 					block_mod="{{form_mod}}"
-					block_mod_elem="is--email"
+					block_mod_elem="is--tel"
 					block_color="{{form_color}}"
-					block_type="email"
+					block_type="tel"
 					block_attr="  "
 					block_required="required"
-					block_required_custom="email"
-					block_label="E-mail"
-					block_placeholder="Ваш E-mail"
-				]]
-			</div>
-			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--textarea">
-				[[azbntple 
-					tpl="/src/block/site/default/form/elem-textarea.html"
-					form_id="{{form_id}}"
-					block_id="comments"
-					block_prefix="{{form_prefix}}"
-					block_mod="{{form_mod}}"
-					block_mod_elem="is--textarea"
-					block_color="{{form_color}}"
-					block_attr="  "
-					block_required="required"
-					block_required_custom="  "
-					block_label="Сообщение"
-					block_placeholder="Сообщение"
+					block_required_custom="phone"
+					block_label="Телефон"
+					block_placeholder="Телефон"
 				]]
 			</div>
 			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--btn">
@@ -64,7 +48,7 @@
 			</div>
 			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--agreement">
 				[[azbntple 
-					tpl="/src/block/site/default/form/elem-switch.html"
+					tpl="/src/block/site/default/form/elem-agreement.html"
 					form_id="{{form_id}}"
 					block_id="agreement"
 					block_prefix="{{form_prefix}}"
@@ -74,7 +58,7 @@
 					block_attr="checked"
 					block_required="required"
 					block_label="Согласие на обработку персональных данных"
-					block_text="Я согласен на обработку <a href='{{url-path-docs}}/agreement.pdf' target='_blank'>персональных данных</a>"
+					block_text="Нажимая кнопку «{{form_btn_name}}», я&nbsp;подтверждаю, что я&nbsp;ознакомлен и&nbsp;согласен с&nbsp;условиями политики <a href='{{page.agreement}}' target='_blank'>обработки персональных данных</a>"
 				]]	
 			</div>
 		</div>	

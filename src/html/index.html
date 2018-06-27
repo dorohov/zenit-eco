@@ -7,67 +7,47 @@
 			description=" "
 		]] 		
 	</head>
-	<body> 
+	<body class="is--index-page"> 
 		[[azbntple 
 			tpl="/src/block/site/default/navbar/.html"
 			class="navbar-site scroll"
 			navbar_prefix="navbar__"   
-			navbar_mod="  "     
+			navbar_mod="is--index"     
 		]] 
 		[[azbntple 
 			tpl="/src/block/site/default/header/panel.html"
 			block_prefix="header-block__"
-			block_heading="Орловский ГАУ <span>им. Н.В. Парахина</span>"
-			block_heading_small="Орловский государственный<br> аграрный университет"
+			block_heading="<span class='hidden-xs'>ЖK</span><span class='visible-xs'>Жилой комплекс </span> «Овсянниковская поляна»"
+			block_heading_small="Лес — у дома, <br>комфорт — внутри"
 		]]	
 		[[azbntple  
-			tpl="/src/block/site/page/relevant-index.html"
+			tpl="/src/block/site/page/apartment-index.html"
 			content_prefix="content-block__"       
-			content_mod="is--relevant-index"    
-			block_heading_mod="is--page-heading  is--white"
-			block_heading_level="h2"
-			block_heading="Актуально"  
-			block_heading_btn_name="Все объявления"
-			block_heading_btn_link="{{page.news}}"
-			block_heading_btn_mod="is--more  is--white"
+			content_mod="is--apartment-index"
+			header_level="h2"
+			header_prefix="page-header__"
+			header_mod="is--index-heading  is--apartment-index"
+			header="Выберите планировку"
+		]]	
+		[[azbntple  
+			tpl="/src/block/site/page/advantage-index.html"
+			content_prefix="content-block__"       
+			content_mod="is--advantage-index"
 		]]
 		[[azbntple  
-			tpl="/src/block/site/page/student-index.html"
+			tpl="/src/block/site/page/gallery-index.html"
 			content_prefix="content-block__"       
-			content_mod="is--student-index"
-		]]	
-		[[azbntple  
-			tpl="/src/block/site/page/faculty-index.html"
-			content_prefix="content-block__"       
-			content_mod="is--faculty-index"    
-			block_heading_mod="is--page-heading"
-			block_heading_level="h2"
-			block_heading="Факультеты" 
+			content_mod="is--gallery-index"
 		]]
 		[[azbntple  
-			tpl="/src/block/site/page/news-index.html"
-			content_prefix="content-block__"       
-			content_mod="is--news-index"    
-			block_heading_mod="is--page-heading"
-			block_heading_level="h2"
-			block_heading="Новости" 
-		]]	
-		[[azbntple  
-			tpl="/src/block/site/page/event-index.html"
-			content_prefix="content-block__"       
-			content_mod="is--event-index"    
-			block_heading_mod="is--page-heading"
-			block_heading_level="h2"
-			block_heading="Мероприятия" 
-		]]	
-		[[azbntple  
-			tpl="/src/block/site/page/favorite-index.html"
-			content_prefix="content-block__"       
-			content_mod="is--favorite-index"    
-			block_heading_mod="is--page-heading"
-			block_heading_level="h2"
-			block_heading="Полезные ссылки" 
-		]]	
+			tpl="/src/block/site/page/note-index.html"
+			content_prefix="content-block__"
+			content_mod="is--note-index"
+			header_level="h2"
+			header_prefix="page-header__"
+			header_mod="is--index-heading  is--note-index"
+			header="Идеальный выбор"
+		]]
 		[[azbntple 
 			tpl="/src/block/site/default/footer/.html"
 			footer_prefix="footer__" 

@@ -1,25 +1,37 @@
 <footer class="{{footer_prefix}}block">	
-	<div class="{{footer_prefix}}inner">	
+	<div class="{{footer_prefix}}inner  is--top">	
 		<div class="container {{footer_prefix}}container">
 			<div class="row {{footer_prefix}}row  is--base">
 				<div class="cols {{footer_prefix}}cols  is--copyright">
 					<div class="{{footer_prefix}}copyright">
-						<p>&copy; 2001-2017</p>
-						<p>{{contacts.copyright}}</p>
+						<div class="{{footer_prefix}}copyright-preview">
+							<img src="{{url-path-img}}/svg/logotip.svg" alt="">
+						</div>
+						<div class="{{footer_prefix}}copyright-name">
+							Строим для вас и ваших детей
+						</div>
 					</div>
 				</div>
 				<div class="cols {{footer_prefix}}cols  is--contacts">
-					<div class="{{footer_prefix}}address">
-						<div class="{{footer_prefix}}address-heading">Адрес и телефон:</div> 
-						<div>{{contacts.address}}</div>
-						<div><a href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a></div>
-					</div>
+					<div><a class="{{footer_prefix}}tel" href="tel:{{contacts.phone_tel}}">{{contacts.phone}}</a></div>
 				</div>
-				<div class="cols {{footer_prefix}}cols  is--contacts">
-					<div class="{{footer_prefix}}address">
-						<div class="{{footer_prefix}}address-heading">График работы:</div> 
-						{{contacts.clock}}
-					</div>
+				<div class="cols {{footer_prefix}}cols  is--link">
+					[[azbntple 
+						tpl="/src/block/site/default/button/link.html"
+						button_prefix="btn-link__" 
+						button_mod="is--footer"
+						button_link="##"
+						button_name="Заказать обратный звонок"
+					]]
+				</div>
+				<div class="cols {{footer_prefix}}cols  is--link">
+					[[azbntple 
+						tpl="/src/block/site/default/button/link.html"
+						button_prefix="btn-link__" 
+						button_mod="is--footer"
+						button_link="{{page.fz214}}"
+						button_name="Мы работаем по 214 ФЗ"
+					]]
 				</div>
 				<div class="cols {{footer_prefix}}cols  is--soc">
 					[[azbntple 
@@ -31,7 +43,7 @@
 				<div class="cols {{footer_prefix}}cols  is--dorohovdesign">
 					<div class="row {{footer_prefix}}dorohovdesign-row"> 
 						<div class="cols {{footer_prefix}}dorohovdesign-cols  is--text">
-							<div class="{{footer_prefix}}dorohovdesign-text">Создание сайта</div>
+							<div class="{{footer_prefix}}dorohovdesign-text">Разработано в</div>
 						</div>
 						<div class="cols {{footer_prefix}}dorohovdesign-cols  is--logotip">
 							<a href="http://dorohovdesign.ru/" target="_blank" class="{{footer_prefix}}dorohovdesign-logotip">
@@ -40,16 +52,21 @@
 						</div>
 					</div>				 
 				</div>
-			</div>			
+			</div>	
+		</div>
+	</div>
+	<div class="{{footer_prefix}}inner">	
+		<div class="container {{footer_prefix}}container">
+					
 			<div class="row {{footer_prefix}}row  is--text">
-				<div class="cols {{footer_prefix}}cols  is--text">
+				<div class="cols {{footer_prefix}}cols  is--text-left">
 					<div class="{{footer_prefix}}text">
-						<p>Продолжая пользование данным сайтом, я выражаю свое согласие на обработку моих персональных данных с использованием интернет-сервиса «Яндекс.Метрика». </p>
+						<p>Любая информация, представленная на данном ресурсе, носит исключительно информационный характер, и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ.</p>
 					</div>
 				</div>
-				<div class="cols {{footer_prefix}}cols  is--text">
+				<div class="cols {{footer_prefix}}cols  is--text-right">
 					<div class="{{footer_prefix}}text">
-						<p>С <a href="{{url-path-docs}}/agreement.pdf" target="_blank">Политикой федерального государственного бюджетного образовательного учреждения высшего образования «Орловский государственный аграрный университет имени Н.В. Парахина» в отношении обработки персональных данных</a> ознакомлен.</p>
+						<p>В соответствии с Федеральным законом от 30.12.2014 г. № 214-ФЗ «Об участии в долевом строительстве многоквартирных домов и иных объектов недвижимости и о внесении изменений в некоторые законодательные акты Российской Федерации» (с изменениями и дополнениями) участники долевого строительства имеют право знакомиться с проектной документацией (включая все внесенные изменения) на строительство объекта." <a href="http://zenit-eco.ru/wp-content/themes/azbnbasetheme/docs/lawinfo.pdf" data-fancybox="docs">Юридическая информация</a></p>
 					</div>
 				</div>
 			</div>

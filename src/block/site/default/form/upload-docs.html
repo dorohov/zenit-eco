@@ -1,0 +1,74 @@
+<form action="#" class="{{form_prefix}}block  {{form_mod}}  azbn-editor-create-form"  data-target-url="/wp-admin/admin-ajax.php">
+	<input type="hidden" name="action" value="azbnajax_call">
+	<input type="hidden" name="method" value="createDoc">
+	<input type="hidden" name="type" value="json">
+	<input type="hidden" name="file[post_id]" class="azbn-editor-post_id-hidden" value="0">
+	<div class="{{form_prefix}}inner  {{form_mod}}"  >
+		<div class="row {{form_prefix}}row  is--wrap">
+			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--control  azbn-editor-field-item">
+				[[azbntple 
+					tpl="/src/block/site/default/form/elem-input.html"
+					form_id="{{form_id}}"
+					block_id="title"
+					block_prefix="{{form_prefix}}"
+					block_mod="{{form_mod}}"
+					block_mod_elem="is--title"
+					block_color="{{form_color}}"
+					block_type="text"
+					block_attr="  "
+					block_required="  "
+					block_azbn="azbn-editor-title-input"
+					block_required_custom="  "
+					block_label="Название файла"
+					block_placeholder="Название файла"
+				]]
+			</div>
+			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--control  azbn-editor-field-item">
+				[[azbntple 
+					tpl="/src/block/site/default/form/elem-select.html"
+					form_id="{{form_id}}"
+					block_id="parent"
+					block_prefix="{{form_prefix}}"
+					block_mod="{{form_mod}}"
+					block_mod_elem="is--parent"
+					block_color="{{form_color}}"
+					block_type="tel"
+					block_attr="  "
+					block_azbn="azbn-editor-parent-select"
+					block_required="  "
+					block_required_custom="  "
+					block_label="Родительский файл"
+					block_option="<option disabled selected>Родительский файл</option><option>это новый файл, а не редакция</option><option>Способы обеспечения исполнения обязательств по договору участия в долевом строительстве</option><option>Проект договора участия в долевом строительстве</option><option>Заключение уполномоченного органа о соответствии застройщика и проектной декларации требованиям ФЗ №214-ФЗ от 30.12.2004 г.</option><option>Проектная декларация</option><option>Документы, подтверждающие права застройщика на земельный участок</option><option>Заключение экспертизы проектной документации</option><option>Разрешение на строительство</option><option>Аудиторское заключение за последний год</option><option>Разрешение на ввод в эксплуатацию объектов капитального строительства</option>"
+				]]
+			</div>
+			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--control  azbn-editor-field-item">
+				[[azbntple 
+					tpl="/src/block/site/default/form/elem-input.html"
+					form_id="{{form_id}}"
+					block_id="uploadurl"
+					block_prefix="{{form_prefix}}"
+					block_mod="{{form_mod}}"
+					block_mod_elem="is--uploadurl"
+					block_color="{{form_color}}"
+					block_type="text"
+					block_attr="  "
+					block_required="  "
+					block_azbn="azbn-editor-upload-url azbn-editor-uploadurl-input"
+					block_required_custom="  "
+					block_label="URL файла"
+					block_placeholder="URL файла"
+				]]
+				<div style="text-align: right;"><a href="#upload" class="azbn-editor-uploadurl-btn">загрузить с компьютера</a></div>
+			</div>
+			<div class="cols {{form_prefix}}cols  {{form_mod}}  is--btn  azbn-editor-field-item">
+				[[azbntple 
+					tpl="/src/block/site/default/button/button.html"
+					button_prefix="btn__" 
+					button_mod="{{form_btn_mod}}"
+					button_type="submit"
+					button_name="{{form_btn_name}}"
+				]]				
+			</div>
+		</div>	
+	</div> 
+</form> 

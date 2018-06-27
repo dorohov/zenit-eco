@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>
+		[[azbntple 
+			tpl="/src/block/site/default/head/.html" 
+			title=" "
+			description=" "
+		]] 		
+	</head>
+	<body>  
+		[[azbntple 
+			tpl="/src/block/site/default/navbar/.html"
+			class="navbar-site scroll"
+			navbar_prefix="navbar__"   
+			navbar_mod="  "
+		]]
+		[[azbntple  
+			tpl="/src/block/site/page/docs-editor.html"
+			content_prefix="content-block__"       
+			content_mod="is--docs-card"    
+			block_heading_mod="is--page-heading"
+			block_heading_level="h1"
+			block_heading="Документы"  
+			block_btn_name="Загрузить документ"
+			block_btn_icon="icon-upload"
+			block_btn_target="modal-uploading"
+			block_btn_mod="azbn-editor-get-modal-btn"
+		]]	
+		[[azbntple 
+			tpl="/src/block/site/default/footer/.html"
+			footer_prefix="footer__" 
+		]]
+		[[azbntple 
+			tpl="/src/block/site/default/modals/journal.html"
+			modals_prefix="modal-base__" 
+			modals_id="modal-journal"
+			modals_mod="is--lg"
+			modals_heading="Журнал изменений"
+			modals_note="Мы свяжемся с вами в ближайшее время."
+		]]
+		[[azbntple 
+			tpl="/src/block/site/default/modals/upload-docs.html"
+			modals_prefix="modal-base__" 
+			modals_id="modal-uploading"
+			modals_mod="is--lg"
+			modals_heading="Добавление файла"
+			modals_note="Введите название файла и выберите сам файл с локального компьютера"
+			form_heading="Добавление файла"  
+			form_id="file"
+			form_mod="  "
+			form_color="  "
+			form_btn_mod="is--form"
+			form_btn_name="Создать запись" 
+		]]
+		[[azbntple tpl="/src/block/site/default/script/script.html" ]]
+	</body>
+</html>

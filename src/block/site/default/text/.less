@@ -1,14 +1,26 @@
 .text__{
 	&container{
-		margin: 0 auto;
-		max-width: 1015px;
+		margin: 0 auto;	
+		padding-top: 40px;
+		padding-bottom: 40px;
+		@media @media-point-screen {
+			box-shadow: 0px 0px 27px 0px fadeout(@b-color-a-hover, 50%);	
+			max-width: 1345px;
+			padding-left: 7vw;
+			padding-right: 7vw;
+			padding-top: 4vw;
+			padding-bottom: 6vw;
+		}
 	}
 	&inner{
 	}		
 	&block{	
-		line-height: @b-lh - 2;
+		//line-height: @b-lh - 2;
 		div, p{
 			margin-bottom: 10px;
+			&.row, &.cols, .card-item__card {
+				margin-bottom: 0;
+			}
 		}
 		ol, ul, .table{
 			margin-bottom: 20px;
@@ -30,17 +42,17 @@
 		}
 		h5{
 			margin-bottom: 20px;
-			color: @black;
+			font-weight: 400;
 		}
 		ol{
-			& > li{margin-bottom: 25px}
+			& > li{margin-bottom: 10px}
 			&.is--counts{
 				counter-reset: list;
 				padding-left: 0;
 				margin-left: 0;
 				list-style: none;
 				& > li{
-					padding-left: 20px;
+					padding-left: 30px;
 					position: relative;
 					&::before{
 						counter-increment: list;
@@ -49,7 +61,7 @@
 						//font-family: @b-ff-2;
 						position: absolute;
 						left: 0;
-						color: @b-color-a-hover;
+						color: @b-color-btn;
 						font-weight: 700;
 						font-size: @b-fs - 2;
 					}
@@ -69,17 +81,16 @@
 				& > li{
 					position: relative;
 					z-index: 1;
-					padding-left: 15px;
-					margin-bottom: 3px;
+					padding-left: 25px;
+					margin-bottom: 10px;
 					&::before{
 						content: '';
 						position: absolute;
-						top: 7px;
+						top: 10px;
 						left: 0px;
-						width: 7px;
-						height: 7px;
-						background-color: @b-color-a;
-						border-radius: 50%;
+						width: 15px;
+						height: 2px;
+						background-color: @b-color-btn;
 					}
 				}
 			}
@@ -91,7 +102,7 @@
 			& + h4{padding-top: 20px;}
 			& + h5{padding-top: 25px;}
 			& + blockquote{
-				margin-top: 30px;
+				margin-top: 20px;
 			}
 			@media @media-point-screen {				
 				& + h4{padding-top: 30px;}
@@ -130,14 +141,16 @@
 
 .text__block blockquote,
 blockquote {
-	padding: 0px 0 0px 20px;
+	padding: 0px 0 0px 25px;
 	font-style: italic;
+	color: @b-color-a;
 	//font-size: @b-fs - 2px;
+	line-height: @b-lh - 2;
 	position: relative;
 	margin-bottom: 10px;
 	position: relative;
 	z-index: 1;
-	border-left: 3px solid @b-color-a;
+	border-left: 8px solid @b-color-btn;
 	b,strong{
 		color: @b-color-a;
 	}

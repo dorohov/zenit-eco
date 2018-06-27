@@ -1,6 +1,67 @@
 .page-header__{	
-	&panel{}	
-	&container{}
+	&panel{
+		&.is--grid{
+			margin-bottom: 30px;
+			@media @media-point-xs {
+				display: grid;		
+				grid-template: auto auto / 10fr minmax(220px, 2fr);
+			}
+			@media @media-point-notsmart {
+				margin-bottom: 2.5vw;
+				display: grid;				
+				grid-template: auto auto / 9fr minmax(390px, 3fr);
+				html.msie &{
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+				}
+			}
+			@media @media-point-tablet {
+				//grid-template: auto auto / 10fr minmax(200px, 2fr);
+			}
+		}
+		&.is--nogrid{
+			margin-bottom: 40px;
+			@media @media-point-screen {
+				margin-bottom: 2.5vw;
+			}
+		}
+		&.is--block{
+			position: relative;
+			background-repeat: no-repeat;
+			background-position: center;
+			&::before{
+				content: '';
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: fadeout(@b-color-btn, 30%);
+			}
+		}
+	}	
+	&container{
+		&.is--block{
+			position: relative;
+			z-index: 2; 
+			padding-top: 30px;
+			padding-bottom: 15px;
+			@media @media-point-screen {
+				padding-top: 3.8vw;
+				padding-bottom: 1.4vw;
+			}
+		}
+	}
+	&inner{
+		&.is--block{
+			@media @media-point-screen {
+				padding-left: 14.5vw;
+				padding-right: 14.5vw;
+			}
+		}
+	}
 	&block{	
 		margin-bottom: 30px;
 		@media @media-point-screen {margin-bottom: 2.5vw;}
@@ -8,22 +69,53 @@
 		&.is--mb0{
 			margin-bottom: 0;
 		}
-		//index
-		&.is--faculty-index{
-			@media @media-point-screen {margin-bottom: 20px;}
-		}	
-		&.is--news-index{
-			@media @media-point-screen {
-				margin-bottom: 3.8vw;
+		&.is--grid{
+			margin-bottom: 15px;
+			@media @media-point-xs {
+				grid-row: 2;
+				grid-column: 1;				
+				margin-bottom: 0;
 			}
-		}	
-		&.is--event-index{
+			@media @media-point-notsmart {				
+				margin-bottom: 0;
+				grid-row: 2;
+				grid-column: 1;
+				html.msie &{
+					order: 1;
+					.makeCols(12, 12);
+					flex-grow: 1;
+					align-self: flex-start;
+				}
+			}	
+		}
+		&.is--nogrid{
+			margin-bottom: 25px;			
+		}
+		&.is--apartment-index{
 			@media @media-point-screen {
-				margin-bottom: 5.6vw;
+				margin-bottom: 1.2vw;
 			}
 		}
+		&.is--note-index{
+			@media @media-point-screen {
+				margin-bottom: 30px;
+			}
+		}
+		&.is--apartment{
+			@media @media-point-screen {
+				margin-bottom: 1.6vw;
+			}			
+		}
+		&.is--contacts{
+			@media @media-point-screen {
+				margin-bottom: 1.1vw;
+			}
+		}		
 		&.is--modals{
-			margin-bottom: 20px;
+			margin-bottom: 25px;
+			@media @media-point-screen {
+				margin-bottom: 35px;
+			}
 		}
 	}
 	&row{
@@ -47,24 +139,34 @@
 			br {display: none;}
 		}		
 		&.is--page-heading{
-			.heading2();
+			.heading1();
 		}	
 		&.is--center{
 			text-align: center;
 			@media @media-point-smart {text-align: left;}
 		}	
 		&.is--form-panel{
-			.heading4();
+			.heading2();
+			color: @white; 
+			font-family: @b-ff;
+			font-weight: 700;
 		}
 		&.is--reviews-heading{
 			text-align: center;
 		}
 		&.is--white{
 			color: @white;
-		}	
+		}
+		&.is--index-heading{
+			.heading-lg();
+			font-weight: 400;
+		}
+		&.is--404{
+			.heading-lg();
+			color: @white;
+		}
 		//
 		&.is--news-card{
-			.heading2();
 		}
 		&.is--panel{
 					
@@ -73,12 +175,10 @@
 		}
 	}
 	&heading-small{
-		.calcFontSize(19, 23, 320, 1680);
-		.calcLineHeight(23, 27, 320, 1680);
-		//color: @b-color;
+		.heading4();
+		color: @b-color-h;
 		font-weight: 400;
 		margin: 0;
-		letter-spacing: 0.2px;
 		.page-header__heading + &{
 			padding-top: 5px;
 		}
@@ -92,6 +192,9 @@
 		}
 		@media @media-point-smart {
 			br {display: none;}
+		}
+		&.is--page-heading{
+
 		}
 		&.is--heading{
 			//font-weight: 700;
@@ -107,6 +210,11 @@
 				}
 			}
 		}
+		&.is--404{
+			font-size: @b-fs;
+			line-height: @b-lh;
+			color: @white;
+		}
 		&.is--modals{
 			font-size: @b-fs;
 			line-height: @b-lh - 4;
@@ -114,6 +222,27 @@
 				padding-top: 10px;
 			}
 		}	
+	}
+	&btn-group{}
+	&btn{
+		&.is--grid{
+			@media @media-point-xs {
+				grid-row: 2;
+				grid-column: 2;
+			}
+			@media @media-point-notsmart {
+				align-self: center;
+				grid-row: 2;
+				grid-column: 2;
+				text-align: right;
+				html.msie &{
+					order: 1;
+					//.makeCols(12, 12);
+					flex-grow: 1;
+					align-self: flex-start;
+				}
+			}	
+		}
 	}
 	&icon-row{
 		margin-right: -5px;

@@ -2,43 +2,9 @@
 	&block{
 		position: relative;
 		overflow: hidden;
-		border-bottom: 3px solid @white;
 	}
 	&bg{
 
-	}
-	&panel{
-		//padding-top: 250px;
-		position: relative;
-		padding: 30px 0;
-		display: flex;
-		align-items: center;
-		@media @media-point-notsmart {	
-			position: absolute;
-			top: 0;
-			left: 0;
-			//width: 100%;
-			height: 100%;	
-		}
-		@media @media-point-screen-lg {
-			padding-left: 2.8%;
-			max-width: 680px;
-			width: 37vw;	
-		}
-		@media @media-point-xxl {			
-			padding-left: 8.8%;
-		}
-		&::before{
-			content: '';
-			position: absolute;
-			z-index: 1;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: fadeout(@blue-light, 30%);
-			//filter: blur(15px);
-		}
 	}
 	&container{
 		position: relative;
@@ -48,36 +14,71 @@
 			max-width: 100%;
 		}
 	}
+	&panel{
+		//padding-top: 250px;
+		//position: relative;
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;	
+		max-width: 75%;
+		padding: 30px 0;
+		display: flex;
+		align-items: center;
+		@media @media-point-notsmart {
+			max-width: 765px;
+			width: 47vw;
+		}
+		@media @media-point-screen {
+			padding-right: 2.8%;	
+		}
+		@media @media-point-xxl {			
+			padding-right: 8.8%;
+		}
+	}
 	&inner{
-		
+		//padding-top: 120px;
 	}
 	&heading{
 		font-family: @b-ff-2;
-		color: @blue-dark;
-		.calcFontSize(26, 34, 320, 767);
-		.calcLineHeight(30, 38, 320, 767);
-		font-weight: 700;
+		color: @b-color-a;
+		.calcFontSize(36, 40, 320, 767);
+		.calcLineHeight(40, 44, 320, 767);
+		font-weight: 500;
 		margin-bottom: 10px;
-		span{
+		.hidden-xs{
+			display: none;
+		}
+		.visible-xs{
+			display: block;
 		}
 		@media @media-point-notsmart {
-			.calcFontSize(30, 50, 768, 1680);
-			.calcLineHeight(30, 54, 768, 1680);
-			span{
+			.hidden-xs{
 				display: block;
-				.calcFontSize(25, 35, 768, 1680);				
 			}
+			.visible-xs{
+				display: none;
+			}
+			.calcFontSize(54, 84, 768, 1680);
+			.calcLineHeight(54, 84, 768, 1680);
+			margin-bottom: 4vw;
 		}
 	}
 	&heading-small{
 		font-weight: 500;
-		.heading5();
+		.heading4();
+		.calcFontSize(20, 29, 320, 1680);
+		.calcLineHeight(23, 32, 320, 1680);	
 		margin-bottom: 35px;
+		color: @b-color-a;
 		@media @media-point-smart {
-			br{display: none;}
+			//br{display: none;}
 		}	
-		@media @media-point-screen-lg {
-			margin-bottom: 2.4vw;
+		@media @media-point-notsmart {
+			margin-bottom: 0;
+			position: absolute;
+			top: 1%;
+			left: 28%;
 		}
 	}
 	&btn-group{
@@ -91,9 +92,6 @@
 		margin-bottom: 10px;
 		@media @media-point-smart {
 			padding: 0 5px;
-		}
-		@media @media-point-notsmart {			
-			max-width: 270px;
 		}
 	}
 }

@@ -98,7 +98,7 @@ function fecss_ScreenJS() {
 	ctrl.device = function() {
 		return (ctrl.screen.w < 1010);
 	};
-	ctrl.screenLG = function() {
+	ctrl.isScreenLg = function() {
 		return (ctrl.screen.w > 1199);
 	};
 	ctrl.pc = function() {

@@ -1,0 +1,28 @@
+<div class="{{block_prefix}}panel  {{block_mod}}  is--grid">				
+	[[azbntple 
+		tpl="/src/block/site/default/breadcrumb/level1.html" 
+		bread_prefix="breadcrumb__"
+		bread_mod="{{block_bread_mod}}  is--grid"
+		level_1="{{block_heading}}"
+	]]		
+	[[azbntple 
+		tpl="/src/block/site/default/page-header/group.html" 
+		header_prefix="{{block_prefix}}" 
+		header_mod="{{block_heading_mod}}  is--grid"
+		header_level="{{block_heading_level}}"
+		header="{{block_heading}}"
+		header_small_level="{{block_heading_small_level}}"
+		header_small="{{block_heading_small}}"
+	]]
+	<div class="{{block_prefix}}btn  {{block_mod}}  is--grid">
+		[[azbntple 
+			tpl="/src/block/site/default/button/link-icon-name.html"
+			button_prefix="btn-icon__" 
+			button_mod="  "
+			button_attr="  " 
+			button_link="##"
+			button_name="{{block_btn_name}}" 
+			button_icon="{{block_btn_icon}}"
+		]]
+	</div>
+</div>

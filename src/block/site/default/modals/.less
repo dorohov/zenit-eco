@@ -28,7 +28,7 @@
 	}
 	@media @media-point-notsmart{
 		&.fade .modal-dialog {top: 0;}
-		&.in .modal-dialog {top: 5%;}
+		&.in .modal-dialog {top: 10vh;}
 	}
 	@media @media-point-md2{
 		&.fade .modal-dialog {top: 0;}
@@ -60,18 +60,44 @@
 	width: auto;	
 	margin: 0px;
 	@media @media-point-tablet 	{width: 620px;	margin: 10px auto;}  
-	@media @media-point-screen 	{width: 600px;	margin: 0px auto;} 
+	@media @media-point-screen 	{width: 700px;	margin: 0px auto;}
+	&.is--lg{
+		@media @media-point-tablet {
+			width: 95%;
+		}
+		@media @media-point-screen {
+			width: 1075px;
+		}
+	} 
 	 
 }
 .modal-body {
 	position: relative;
 	background: @white;
-	border-radius: 5px;
-	padding: 35px 40px;
-	@media @media-point-tablet{padding: 70px 60px 50px;}
-	@media @media-point-screen{padding: 3vw 3.2vw;}
+	padding: 35px 40px 35px 25px;
+	@media @media-point-tablet{padding: 60px 50px;}
+	@media @media-point-screen{padding: 3.8vw 5.2vw;}
+	&.is--lg{
+		@media @media-point-smart {
+			height: 100vh;
+		}
+	}
 }
-.modal-content{}
+.modal-content{
+	&.is--lg{
+		@media @media-point-device {
+			overflow: auto;	
+			height: ~"calc(100vh - 27px - 25px - 35px * 2)";
+			//padding: 0 15px;
+		} 
+		@media @media-point-tablet {
+			height: 60vh;
+		}
+		@media @media-point-screen {
+			height: 60vh
+		}
+	}
+}
 // Title text within header
 .modal-title {}
 .modal-close{
@@ -80,21 +106,27 @@
 	right: 20px; 
     z-index: 5; 
     border: 2px solid @b-color-a; 
-   	color: @b-color-a;
-   	background-color: @white; 
-   	border-radius: 50%;
-   	transition: @trs-site;  	 
-	width: 32px;
-	height: 32px;
-	padding: 7px;
+   	color: @white;
+   	background-color: @b-color-a;
+   	transition: @trs-site;
 	top: 8px;
 	right: 8px;
+	width: 26px;
+    height: 26px;
+    padding: 4px;
+	@media @media-point-screen {
+		top: 2vw;
+		right: 2.2vw;  	 
+		width: 36px;
+		height: 36px;
+		padding: 7px;
+	}
 	svg{display: block;} 	
 		
 	&:hover{
-		background-color: @b-color-a;
+		background-color: @white;
 		border-color: @b-color-a;
-		color: @white;
+		color: @b-color-a;
 	}
 }
 .modal-note{
@@ -120,11 +152,6 @@
 		//background: url('/img/maket/products-modal.jpg') no-repeat -738px -148px;
 		//height: 100%;
 		//overflow: auto;
-		&.is--lg{
-			@media @media-point-notsmart {
-				width: 445px;
-			}
-		}
 	}
 	&body {
 		//opacity: 0.7;

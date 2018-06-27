@@ -1,0 +1,47 @@
+<div class="{{content_prefix}}panel  {{content_mod}}">
+	<div class="{{content_prefix}}container container  {{content_mod}}">
+		[[azbntple
+			tpl="/src/block/site/default/page-header/heading.html" 
+			block_prefix="page-header__" 
+			block_mod="  "
+			block_heading_mod="is--page-heading"
+			block_heading="{{block_heading}}"
+			block_heading_level="{{block_heading_level}}"
+			block_bread_mod="  "
+			block_heading_small_level="{{block_heading_small_level}}"
+			block_heading_small="{{block_heading_small}}"
+		]]
+		<div class="{{content_prefix}}row row  is--wrap  is--gutter  {{content_mod}}">
+			<div class="{{content_prefix}}cols cols  {{content_mod}}  is--left">
+				[[azbntple 
+					tpl="/src/block/site/default/tabs/panel-apartment-index.html"
+					block_prefix="tabs__" 
+					block_mod="  " 
+				]]
+				<div class="tabs__pane  apartment-tab1  active">
+					<div class="{{content_prefix}}text  text__block  {{content_mod}}">
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+					[[azbntple 
+						tpl="/src/block/site/default/card/card-apartment-index.html"
+						block_prefix="card-item__" 
+						block_mod="is--apartment-index"
+						block_sale="15 квартир"
+						block_area="65,2 - 100 м<sup>2</sup>"
+					]]
+				</div>
+				<div class="tabs__pane  apartment-tab2"></div>
+				<div class="tabs__pane  apartment-tab3"></div>
+			</div>	
+			<div class="{{content_prefix}}cols cols  {{content_mod}}  is--right">
+				<div class="tabs__pane  apartment-tab1  active">
+					<div class="{{content_prefix}}preview  {{content_mod}}">
+						<img src="{{url-path-img}}/temp/apartment-card-item1.png" class="img-responsive" alt="">
+					</div>
+				</div>
+				<div class="tabs__pane  apartment-tab2"></div>
+				<div class="tabs__pane  apartment-tab3"></div>
+			</div>
+		</div>
+	</div>
+</div>

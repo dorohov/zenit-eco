@@ -33,8 +33,8 @@
 }
 .table{ 
 	border: 0; 
-	font-size: @b-fs - 2;
-	line-height: @b-lh - 6;
+	font-size: @b-fs;
+	line-height: @b-lh;
 	margin-bottom: 0;
 	@media print{
 		* {color: @black}
@@ -44,35 +44,30 @@
 		caption-side: bottom;
 	}			
 	thead{ 
+		@media @media-point-smart {			
+			.table-block.is--journal &{
+				display: none;
+			}
+		}
 		td,
 		th{
 			border: 0;
 			border-left: 0;
-			background-color: @b-color-a;
-			font-weight: 500;
-			//border-bottom: none;
-			padding: 10px;
-			//letter-spacing: 1px;
+			font-weight: 700;
+			padding: 12px;
 			border-top: 0!important;
-			color: @white;	
-			//text-align: center;
-			//text-transform: uppercase;	
-			vertical-align: middle!important;
-			border-right: 1px solid fadeout(@white, 50%);	
-			border-bottom: 1px solid fadeout(@white, 50%);	
+			color: @b-color-a;	
+			text-transform: uppercase;	
+			vertical-align: middle!important;	
+			border-bottom: 3px solid @b-color-a;	
 			@media print{
 				font-size: @b-fs - 4;
 				line-height: @b-lh - 8;
 				border: none;
 			}
 			&:first-child{
-				//border-left: 0;
-				//padding-left: 0;
-				//text-align: left;
 			}
 			&:last-child{
-				//padding-right: 0;
-				//text-align: right;
 			}
 			small{
 				text-transform: none;
@@ -82,9 +77,9 @@
 		}
 	}
 	tbody {	
-		tr{			
+		tr{		
 			th, td{
-				padding: 18px 10px;
+				padding: 25px 13px;
 				border-bottom: 1px solid @b-color-a;
 				//text-align: center;
 			}
@@ -99,12 +94,27 @@
 					border-bottom: 4px solid @b-color-a;
 					@media print{border-bottom-color: @black}
 				}
-			}
+			} 
+			@media @media-point-smart {			
+				.table-block.is--journal &{
+					display: flex;
+					flex-wrap: wrap;
+					border-bottom: 1px solid @b-color-a;
+					padding-bottom: 20px;
+					margin-bottom: 20px;
+					margin-top: -10px;	
+					//margin-left: -15px;
+					//margin-right: -15px;
+					th, td{
+						padding: 10px 30px 0 0;
+						border-bottom: 0;
+					}
+				}
+			}	
 		}
 	}
 	td, th{
 		border: 0;
-		padding: 10px 10px;
 		vertical-align: middle;
 		background-color: @white;
 		&.is--left{text-align: left;}

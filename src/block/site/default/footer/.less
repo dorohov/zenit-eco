@@ -15,8 +15,8 @@
 		@media @media-point-screen {
 			font-size: @footer-fs;
 			line-height: @footer-lh; 
-			padding-top: 60px;
-			padding-bottom: 60px;
+			padding-top: 25px;
+			padding-bottom: 35px;
 			.calcFontSize(13, 16, 1025, 1680);
 			.calcLineHeight(21, 24, 320, 1680);
 		}
@@ -29,7 +29,18 @@
 		a:hover,
 		a[href^="tel:"]:hover,
 		a[href^="maito:"]:hover{
-			color: @footer-color;
+			color: @footer-color-a;
+		}
+	}
+	&inner{
+		&.is--top{
+			border-bottom: 1px solid @blue-light;
+			padding-bottom: 25px;
+			margin-bottom: 25px;
+			@media @media-point-screen {
+				padding-bottom: 25px;
+				margin-bottom: 35px;
+			}
 		}
 	}
 	&container{
@@ -50,13 +61,7 @@
 			margin-right: -10px;	
 		}
 		&.is--base{
-			margin-bottom: 20px;
-			@media @media-point-screen {
-				margin-bottom: 40px;
-			}
-		}
-		&.is--text{
-			flex-wrap: wrap;
+			align-items: center;
 		}
 	}
 	&cols{
@@ -68,54 +73,69 @@
 		@media @media-point-xxs {
 			.makeCols(12, 12);
 		}
-		@media @media-point-tablet {
-			.makeCols(6, 12);
-		}
-		&.is--copyrigt{
-			@media @media-point-device {
-				order: 1;
+		&.is--copyright{
+			display: none;
+			@media @media-point-screen {
+				.makeCols(2.3, 12); 
 			}
-		}
-		&.is--soc{
-			@media @media-point-device {
-				order: 2; 
+			@media @media-point-xxl {
+				display: block;
 			}
 		}
 		&.is--contacts{
-			@media @media-point-device {
-				order: 3; 
-			}
 		}
-		&.is--center{
-					
+		&.is--link{
 		}
-		&.is--contacts{}
-		&.is--dorohovdesign{
-			@media @media-point-xs {
-				margin-left: auto;
-				margin-right: auto;
-			}
-			@media @media-point-sm {
-				//margin-left: auto;
-				//margin-right: auto;
-			}
-			@media @media-point-device {
-				order: 4;
-				.makeCols(12, 12);
-			}
-		}
-		&.is--text{
-			.makeCols(12, 12);
-			@media @media-point-screen {
+		&.is--soc{
+			@media @media-point-tablet {
 				.makeCols(6, 12);
 			}
 		}
-	}
-	&copyright{}
-	&address{
-		div,p{
-			//margin-bottom: 5px;
+		&.is--dorohovdesign{
+			@media @media-point-tablet {
+				.makeCols(6, 12);
+			}
 		}
+		&.is--text-left{
+			.makeCols(12, 12);
+			@media @media-point-screen {
+				.makeCols(4, 12);
+			}
+		}
+		&.is--text-right{
+			.makeCols(12, 12); 
+			@media @media-point-screen {
+				.makeCols(8, 12);
+			}
+		}
+	}
+	&copyright{
+		display: flex;
+		align-items: center;
+	}
+	&copyright-preview{
+		max-width: 102px;
+		width: 10vw;
+		margin-right: 25px;
+	}
+	&copyright-name{
+		color: @blue;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: @b-fs - 2;
+		line-height: @b-lh - 6;
+		padding-top: 5px;
+		letter-spacing: 0.1vw;
+		html.msie &{
+			@media @media-point-screen {
+				max-width: 150px;
+			}
+		}
+	}
+	&tel{
+		.calcFontSize(16, 20, 320, 1680);
+		.calcLineHeight(16, 20, 320, 1680);
+		font-weight: 700;
 	}
 	&address-heading{
 		color: @green-light;
@@ -130,45 +150,47 @@
 		margin-left: -5px;
 		margin-right: -5px;
 		justify-content: flex-end;
+		@media @media-point-xxs {
+			justify-content: flex-start;
+		}
 		@media @media-point-device {
-			justify-content: center;
+			//justify-content: center;
 			flex-wrap: wrap;
 		}  
 	}
 	&dorohovdesign-cols{
 		padding-left: 5px;
 		padding-right: 5px;
-		@media @media-point-device {.makeCols(12, 12);}
+		//@media @media-point-device {.makeCols(12, 12);}
 		&.is--text{
 			text-align: right;
+			@media @media-point-device-xl{
+			    display: none;
+			}
 		}
 	}
 	&dorohovdesign-text{
 		font-size: @b-fs - 2px;
 		line-height: @b-lh - 2px;    
 		margin-left: auto;	
-		color: @white-bd;
+		color: @footer-color-a;
 		//letter-spacing: 1px;
 		//text-transform: uppercase;
 		//font-weight: 700;
 		//color: @blue-light;
-		@media @media-point-device-xl{
-			//padding-bottom: 2px;
-		    //text-align: left;
-		    display: none;
-		}
 	}		
 	&dorohovdesign-logotip{	
-		color: @white-bd!important;	
+		color: @footer-color-a;
+		//color: @white-bd!important;	
 		border: none;
 		display: block;
 		width: 80px;
 		height: 32px;
-		@media @media-point-xs {margin: 0 auto}
+		//@media @media-point-device {margin: 0 auto}
 		@media @media-point-notsmart {}
 		@media @media-point-screen {
-			width: 100px;
-			height: 36px;
+		    width: 107px;
+    		height: 35px;
 			margin:0 auto;
 		}
 		&, &:focus, &:hover{

@@ -6,10 +6,12 @@ body {
 }
 h1, h2, h3, h4, h5, h6{
 	margin: 0 0 10px;
+	color: @page_header_color;
+	font-weight: 700;
 }
 //p{margin: 0 0 10px;}
 i, em{font-style: italic;}
-b, strong{font-weight: 700; color: @black}
+b, strong{font-weight: 700;}
 .page_header(){
 	font-family: @page_header_ff;
 	color: @page_header_color;
@@ -29,11 +31,9 @@ h4{
 }
 h5{
 	.heading5();
-	font-weight: 400;
 }
 h6{
 	.heading6();
-	font-weight: 400;
 }
 ol{
 	margin-left: 30px;
