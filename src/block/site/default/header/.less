@@ -42,8 +42,8 @@
 	&heading{
 		font-family: @b-ff-2;
 		color: @b-color-a;
-		.calcFontSize(36, 40, 320, 767);
-		.calcLineHeight(40, 44, 320, 767);
+		.calcFontSize(32, 40, 320, 767);
+		.calcLineHeight(36, 44, 320, 767);
 		font-weight: 500;
 		margin-bottom: 10px;
 		.hidden-xs{
@@ -59,16 +59,16 @@
 			.visible-xs{
 				display: none;
 			}
-			.calcFontSize(54, 84, 768, 1680);
-			.calcLineHeight(54, 84, 768, 1680);
-			margin-bottom: 4vw;
+			.calcFontSize(54, 74, 768, 1680);
+			.calcLineHeight(54, 74, 768, 1680);
+			margin-bottom: 20px;
 		}
 	}
 	&heading-small{
 		font-weight: 500;
 		.heading4();
-		.calcFontSize(20, 29, 320, 1680);
-		.calcLineHeight(23, 32, 320, 1680);	
+		.calcFontSize(20, 36, 320, 1680);
+		.calcLineHeight(23, 39, 320, 1680);	
 		margin-bottom: 35px;
 		color: @b-color-a;
 		@media @media-point-smart {
@@ -76,9 +76,10 @@
 		}	
 		@media @media-point-notsmart {
 			margin-bottom: 0;
-			position: absolute;
-			top: 1%;
-			left: 28%;
+			//position: absolute;
+			//top: 1%;
+			//left: 28%;
+			margin-bottom: 4vw;
 		}
 	}
 	&btn-group{
